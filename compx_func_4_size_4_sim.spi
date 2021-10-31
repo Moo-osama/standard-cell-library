@@ -1,0 +1,49 @@
+*** SPICE deck for cell compx_func_4_size_4_sim{lay} from library SCL
+*** Created on Tue May 18, 2021 02:11:44
+*** Last revised on Tue May 18, 2021 02:13:06
+*** Written on Tue May 18, 2021 02:13:09 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT SCL__compx_func_4_size_4 FROM CELL compx_func_4_size_4{lay}
+.SUBCKT SCL__compx_func_4_size_4 f gnd vdd w x y z
+Mnmos@4 gnd y net@25 gnd N L=0.2U W=1.1U AS=0.449P AD=1.523P PS=1.917U PD=6.4U
+Mnmos@5 net@25 y gnd gnd N L=0.2U W=1.1U AS=1.523P AD=0.449P PS=6.4U PD=1.917U
+Mnmos@6 gnd z net@37 gnd N L=0.2U W=1.1U AS=0.431P AD=1.523P PS=1.883U PD=6.4U
+Mnmos@7 net@37 z gnd gnd N L=0.2U W=1.1U AS=1.523P AD=0.431P PS=6.4U PD=1.883U
+Mnmos@8 gnd z net@37 gnd N L=0.2U W=1.1U AS=0.431P AD=1.523P PS=1.883U PD=6.4U
+Mnmos@9 net@37 w f gnd N L=0.2U W=1.1U AS=0.756P AD=0.431P PS=2.825U PD=1.883U
+Mnmos@10 f w net@37 gnd N L=0.2U W=1.1U AS=0.431P AD=0.756P PS=1.883U PD=2.825U
+Mnmos@11 net@37 w f gnd N L=0.2U W=1.1U AS=0.756P AD=0.431P PS=2.825U PD=1.883U
+Mnmos@12 f x net@25 gnd N L=0.2U W=1.1U AS=0.449P AD=0.756P PS=1.917U PD=2.825U
+Mnmos@13 net@25 x f gnd N L=0.2U W=1.1U AS=0.756P AD=0.449P PS=2.825U PD=1.917U
+Mnmos@14 f x net@25 gnd N L=0.2U W=1.1U AS=0.449P AD=0.756P PS=1.917U PD=2.825U
+Mnmos@15 net@25 y gnd gnd N L=0.2U W=1.1U AS=1.523P AD=0.449P PS=6.4U PD=1.917U
+Mpmos@4 net@0 y f vdd P L=0.2U W=2.4U AS=0.756P AD=1.08P PS=2.825U PD=3.7U
+Mpmos@5 f y net@0 vdd P L=0.2U W=2.4U AS=1.08P AD=0.756P PS=3.7U PD=2.825U
+Mpmos@6 net@0 z vdd vdd P L=0.2U W=2.4U AS=2.023P AD=1.08P PS=7.683U PD=3.7U
+Mpmos@7 vdd z net@0 vdd P L=0.2U W=2.4U AS=1.08P AD=2.023P PS=3.7U PD=7.683U
+Mpmos@8 net@0 x f vdd P L=0.2U W=2.4U AS=0.756P AD=1.08P PS=2.825U PD=3.7U
+Mpmos@9 f x net@0 vdd P L=0.2U W=2.4U AS=1.08P AD=0.756P PS=3.7U PD=2.825U
+Mpmos@10 net@0 x f vdd P L=0.2U W=2.4U AS=0.756P AD=1.08P PS=2.825U PD=3.7U
+Mpmos@11 f y net@0 vdd P L=0.2U W=2.4U AS=1.08P AD=0.756P PS=3.7U PD=2.825U
+Mpmos@12 net@0 z vdd vdd P L=0.2U W=2.4U AS=2.023P AD=1.08P PS=7.683U PD=3.7U
+Mpmos@13 vdd w net@0 vdd P L=0.2U W=2.4U AS=1.08P AD=2.023P PS=3.7U PD=7.683U
+Mpmos@14 net@0 w vdd vdd P L=0.2U W=2.4U AS=2.023P AD=1.08P PS=7.683U PD=3.7U
+Mpmos@15 vdd w net@0 vdd P L=0.2U W=2.4U AS=1.08P AD=2.023P PS=3.7U PD=7.683U
+.ENDS SCL__compx_func_4_size_4
+
+*** TOP LEVEL CELL: compx_func_4_size_4_sim{lay}
+Xcompx_fu@0 f gnd vdd gnd a vdd gnd SCL__compx_func_4_size_4
+
+* Spice Code nodes in cell cell 'compx_func_4_size_4_sim{lay}'
+vdd vdd 0 dc 1.8
+vin a 0 DC pulse 0 1.8 0.1n 1000p 1000p 5n 10n
+.tran 0 100n
+cload f 0 1064.352fF
+.measure tpdr v(a) val=0 fall=1 TARG v(f) val=0.9 rise=1
+.measure tpdf v(a) val=0.9 rise=1 TARG v(f) val=0.9 fall=1
+.measure trise trig v(f) val=0.18 rise=1 TARG v(f) val=1.62 rise=1
+.measure tfall trig v(f) val=1.62 fall=1 TARG v(f) val=0.18 fall=1
+.include D:\AUC\8th Semester - Spring 21\DD2\Project\scmos18.txt
+.END

@@ -1,0 +1,18 @@
+Trying out PMOS size = 1 and NMOS size = 0.4
+Obtained: 
+tpdr = 5.45289e-11
+tpdf = 4.5476e-11
+tpdr/tpdf = 1.19907
+----------------------------------------------------------------------
+Trying out PMOS size = 1.1 and NMOS size = 0.4
+Obtained: 
+tpdr = 5.47995e-11
+tpdf = 5.27373e-11
+tpdr/tpdf = 1.0391
+----------------------------------------------------------------------
+Trying out PMOS size = 1.2 and NMOS size = 0.4
+Obtained: 
+tpdr = 5.00274e-11
+tpdf = 5.45398e-11
+tpdr/tpdf = 0.917264
+----------------------------------------------------------------------

@@ -1,0 +1,35 @@
+Circuit: *** SPICE deck for cell inverter_size_4_sim{lay} from library SCL
+
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Direct Newton iteration for .op point succeeded.
+
+tpdr=8.02129e-009 FROM 0 TO 8.02129e-009
+tpdf=2.10515e-009 FROM 0 TO 2.10515e-009
+trise=2.47314e-009 FROM 7.05721e-009 TO 9.53035e-009
+tfall=2.42293e-009 FROM 1.05447e-009 TO 3.4774e-009
+
+
+Date: Tue May 18 02:23:11 2021
+Total elapsed time: 0.108 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2619
+traniter = 2612
+tranpoints = 1277
+accept = 1216
+rejected = 61
+matrix size = 5
+fillins = 0
+solver = Normal
+Matrix Compiler1: 204 bytes object code size  0.0/0.0/[0.0]
+Matrix Compiler2: off  [0.0]/0.0/0.0
+

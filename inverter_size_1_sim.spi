@@ -1,0 +1,27 @@
+*** SPICE deck for cell inverter_size_1_sim{lay} from library SCL
+*** Created on Tue May 04, 2021 02:37:19
+*** Last revised on Tue May 18, 2021 01:50:26
+*** Written on Tue May 18, 2021 02:14:30 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT SCL__inverter_size_1 FROM CELL inverter_size_1{lay}
+.SUBCKT SCL__inverter_size_1 A F gnd vdd
+Mnmos@1 F A gnd gnd N L=0.2U W=0.4U AS=1.29P AD=0.448P PS=7.2U PD=2.75U
+Mpmos@0 vdd A F vdd P L=0.2U W=1.1U AS=0.448P AD=1.805P PS=2.75U PD=8.5U
+.ENDS SCL__inverter_size_1
+
+*** TOP LEVEL CELL: inverter_size_1_sim{lay}
+Xinverter@4 a f gnd vdd SCL__inverter_size_1
+
+* Spice Code nodes in cell cell 'inverter_size_1_sim{lay}'
+vdd vdd 0 dc 1.8
+vin a 0 DC pulse 0 1.8 0.1n 1000p 1000p 5n 10n
+.tran 0 100n
+cload f 0 1064.352fF
+.measure tpdr v(a) val=0 fall=1 TARG v(f) val=0.9 rise=1
+.measure tpdf v(a) val=0.9 rise=1 TARG v(f) val=0.9 fall=1
+.measure trise trig v(f) val=0.18 rise=1 TARG v(f) val=1.62 rise=1
+.measure tfall trig v(f) val=1.62 fall=1 TARG v(f) val=0.18 fall=1
+.include D:\AUC\8th Semester - Spring 21\DD2\Project\scmos18.txt
+.END

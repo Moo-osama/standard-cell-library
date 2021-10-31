@@ -1,0 +1,33 @@
+*** SPICE deck for cell compx_func_4_size_1_sim{lay} from library SCL
+*** Created on Tue May 04, 2021 07:30:35
+*** Last revised on Tue May 18, 2021 02:09:12
+*** Written on Tue May 18, 2021 02:09:14 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT SCL__compx_func_4_size_1 FROM CELL compx_func_4_size_1{lay}
+.SUBCKT SCL__compx_func_4_size_1 f gnd vdd w x y z
+Mnmos@4 f x net@92 gnd N L=0.2U W=0.9U AS=0.27P AD=0.548P PS=1.5U PD=2.75U
+Mnmos@5 net@92 y gnd gnd N L=0.2U W=0.9U AS=1.27P AD=0.27P PS=6U PD=1.5U
+Mnmos@6 gnd z net@95 gnd N L=0.2U W=0.9U AS=0.27P AD=1.27P PS=1.5U PD=6U
+Mnmos@7 net@95 w f gnd N L=0.2U W=0.9U AS=0.548P AD=0.27P PS=2.75U PD=1.5U
+Mpmos@4 f x net@83 vdd P L=0.2U W=2U AS=0.85P AD=0.548P PS=3.85U PD=2.75U
+Mpmos@5 net@83 y f vdd P L=0.2U W=2U AS=0.548P AD=0.85P PS=2.75U PD=3.85U
+Mpmos@6 vdd z net@83 vdd P L=0.2U W=2U AS=0.85P AD=1.6P PS=3.85U PD=7.1U
+Mpmos@7 net@83 w vdd vdd P L=0.2U W=2U AS=1.6P AD=0.85P PS=7.1U PD=3.85U
+.ENDS SCL__compx_func_4_size_1
+
+*** TOP LEVEL CELL: compx_func_4_size_1_sim{lay}
+Xcompx_fu@6 f gnd vdd gnd a vdd gnd SCL__compx_func_4_size_1
+
+* Spice Code nodes in cell cell 'compx_func_4_size_1_sim{lay}'
+vdd vdd 0 dc 1.8
+vin a 0 DC pulse 0 1.8 0.1n 1000p 1000p 5n 10n
+.tran 0 100n
+cload f 0 1064.352fF
+.measure tpdr v(a) val=0 fall=1 TARG v(f) val=0.9 rise=1
+.measure tpdf v(a) val=0.9 rise=1 TARG v(f) val=0.9 fall=1
+.measure trise trig v(f) val=0.18 rise=1 TARG v(f) val=1.62 rise=1
+.measure tfall trig v(f) val=1.62 fall=1 TARG v(f) val=0.18 fall=1
+.include D:\AUC\8th Semester - Spring 21\DD2\Project\scmos18.txt
+.END

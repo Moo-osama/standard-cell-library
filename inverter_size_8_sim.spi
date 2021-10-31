@@ -1,0 +1,31 @@
+*** SPICE deck for cell inverter_size_8_sim{lay} from library SCL
+*** Created on Sun May 16, 2021 17:26:30
+*** Last revised on Tue May 18, 2021 02:15:59
+*** Written on Tue May 18, 2021 04:12:34 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT SCL__inverter_size_8 FROM CELL SCL:inverter_size_8{lay}
+.SUBCKT SCL__inverter_size_8 A F gnd vdd
+Mnmos@1 gnd A F gnd N L=0.2U W=0.9U AS=0.894P AD=1.118P PS=3.433U PD=5.233U
+Mnmos@2 F A gnd gnd N L=0.2U W=0.9U AS=1.118P AD=0.894P PS=5.233U PD=3.433U
+Mnmos@3 gnd A F gnd N L=0.2U W=0.9U AS=0.894P AD=1.118P PS=3.433U PD=5.233U
+Mpmos@1 F A vdd vdd P L=0.2U W=2.8U AS=2.173P AD=0.894P PS=7.833U PD=3.433U
+Mpmos@2 vdd A F vdd P L=0.2U W=2.8U AS=0.894P AD=2.173P PS=3.433U PD=7.833U
+Mpmos@3 F A vdd vdd P L=0.2U W=2.8U AS=2.173P AD=0.894P PS=7.833U PD=3.433U
+.ENDS SCL__inverter_size_8
+
+*** TOP LEVEL CELL: SCL:inverter_size_8_sim{lay}
+Xinverter@1 a f gnd vdd SCL__inverter_size_8
+
+* Spice Code nodes in cell cell 'SCL:inverter_size_8_sim{lay}'
+vdd vdd 0 dc 1.8
+vin a 0 DC pulse 0 1.8 0.1n 0.00001f 0.00001f 5n 10n
+.tran 0 100n
+cload f 0 9fF
+.measure tpdr v(a) val=0 fall=1 TARG v(f) val=0.9 rise=1
+.measure tpdf v(a) val=0.9 rise=1 TARG v(f) val=0.9 fall=1
+.measure trise trig v(f) val=0.18 rise=1 TARG v(f) val=1.62 rise=1
+.measure tfall trig v(f) val=1.62 fall=1 TARG v(f) val=0.18 fall=1
+.include D:\AUC\8th Semester - Spring 21\DD2\Project\scmos18.txt
+.END

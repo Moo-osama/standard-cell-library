@@ -1,0 +1,28 @@
+*** SPICE deck for cell inverter_size_1_cinv{sch} from library SCL
+*** Created on Mon May 17, 2021 16:30:36
+*** Last revised on Mon May 17, 2021 16:51:06
+*** Written on Tue May 18, 2021 02:16:46 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT SCL__inverter_size_1 FROM CELL inverter_size_1{sch}
+.SUBCKT SCL__inverter_size_1 A F gnd vdd
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 F A gnd gnd N L=0.2U W=0.4U
+Mpmos@0 vdd A F vdd P L=0.2U W=1.1U
+.ENDS SCL__inverter_size_1
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: inverter_size_1_cinv{sch}
+Rres@0 out in 10k
+Xinverter@1 out f gnd vdd SCL__inverter_size_1
+
+* Spice Code nodes in cell cell 'inverter_size_1_cinv{sch}'
+vdd vdd 0 dc 1.8
+vin in 0 pulse 0 1.8 10n 0p 0p 20n 50n
+.measure tau trig v(out) val=0 rise=1 TARG v(out) val=1.1376 rise=1
+.tran 0 200n
+.include D:\AUC\8th Semester - Spring 21\DD2\Project\scmos18.txt
+.END

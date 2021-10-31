@@ -1,0 +1,60 @@
+Trying out PMOS size = 6.4 and NMOS size = 3.2
+Obtained: 
+tpdr = 3.95294e-11
+tpdf = 3.03449e-11
+tpdr/tpdf = 1.30267
+----------------------------------------------------------------------
+Trying out PMOS size = 6.5 and NMOS size = 3.2
+Obtained: 
+tpdr = 4.43131e-11
+tpdf = 3.6277e-11
+tpdr/tpdf = 1.22152
+----------------------------------------------------------------------
+Trying out PMOS size = 6.6 and NMOS size = 3.2
+Obtained: 
+tpdr = 4.37014e-11
+tpdf = 3.67965e-11
+tpdr/tpdf = 1.18765
+----------------------------------------------------------------------
+Trying out PMOS size = 6.7 and NMOS size = 3.2
+Obtained: 
+tpdr = 4.31169e-11
+tpdf = 3.73293e-11
+tpdr/tpdf = 1.15504
+----------------------------------------------------------------------
+Trying out PMOS size = 6.8 and NMOS size = 3.2
+Obtained: 
+tpdr = 4.25578e-11
+tpdf = 3.78753e-11
+tpdr/tpdf = 1.12363
+----------------------------------------------------------------------
+Trying out PMOS size = 6.9 and NMOS size = 3.2
+Obtained: 
+tpdr = 4.19598e-11
+tpdf = 3.84348e-11
+tpdr/tpdf = 1.09171
+----------------------------------------------------------------------
+Trying out PMOS size = 7 and NMOS size = 3.2
+Obtained: 
+tpdr = 4.14648e-11
+tpdf = 3.90081e-11
+tpdr/tpdf = 1.06298
+----------------------------------------------------------------------
+Trying out PMOS size = 7.1 and NMOS size = 3.2
+Obtained: 
+tpdr = 4.09885e-11
+tpdf = 3.95954e-11
+tpdr/tpdf = 1.03518
+----------------------------------------------------------------------
+Trying out PMOS size = 7.2 and NMOS size = 3.2
+Obtained: 
+tpdr = 4.05292e-11
+tpdf = 4.01966e-11
+tpdr/tpdf = 1.00827
+----------------------------------------------------------------------
+Trying out PMOS size = 7.3 and NMOS size = 3.2
+Obtained: 
+tpdr = 4.00853e-11
+tpdf = 4.08119e-11
+tpdr/tpdf = 0.982196
+----------------------------------------------------------------------

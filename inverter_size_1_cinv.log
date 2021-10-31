@@ -1,0 +1,39 @@
+Circuit: *** SPICE deck for cell inverter_size_1_cinv{sch} from library SCL
+
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Limiting rise time of source vin to 2e-009
+Limiting fall time of source vin to 2e-009
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Direct Newton iteration for .op point succeeded.
+
+tau=1.33044e-009 FROM 1e-008 TO 1.13304e-008
+
+
+Date: Tue May 18 02:16:46 2021
+Total elapsed time: 0.085 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2864
+traniter = 2856
+tranpoints = 1102
+accept = 1086
+rejected = 16
+matrix size = 6
+fillins = 0
+solver = Normal
+Matrix Compiler1:      11 opcodes  0.1/[0.0]/0.0
+Matrix Compiler2: off  [0.0]/0.1/0.1
+
+
