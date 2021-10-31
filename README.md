@@ -35,7 +35,7 @@ In this part, we try to reduce the cell height as much as possible. Our calculat
 The layout of function 6 of size 4 before and after applying multiple fingers:
 
 <p align="center">
-<img src="before.png">
+<img src="before.png" width=50% height=50%>
 </p>
 
 Now, after applying multiple fingers, the newly achieved maximum height is 155. 
