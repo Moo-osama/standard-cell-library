@@ -39,4 +39,4 @@ The layout of function 6 of size 4 before and after applying multiple fingers:
 </p>
 
 Now, after applying multiple fingers, the newly achieved maximum height is 155. 
-Following that, we have resized all other layouts to fit in a 155 height.
+Following that, we have resized all other layouts to fit in a 155 height, a minimzation of roughly 50% from the simple implementation.
